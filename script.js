@@ -7,6 +7,34 @@ menuToggle.addEventListener("click", () => {
 });
 
 //scroll detection
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("#navMenu a");
+
+const scrollObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + id) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+    rootMargin: "0% 0px -50% 0px"
+  }
+);
+
+sections.forEach((section) => {
+  scrollObserver.observe(section);
+});
+
 
 
 //ripple feedback on icons

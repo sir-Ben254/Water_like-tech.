@@ -1,0 +1,339 @@
+:root {
+    --primary: #0066ff;
+    --secondary: #00c6ff;
+    --dark: #0f172a;
+    --glass: rgba(255,255,255,0.08);
+}
+
+/* SECTION */
+.services-section {
+    padding: 100px 5%;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 60px;
+    background: linear-gradient(to right, var(--secondary), white);
+
+    /* Standard */
+    background-clip: text;
+    color: transparent;
+
+    /* WebKit support (Safari, older Chrome) */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* GRID LAYOUT */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "short1 short2 short3"
+        "long long short4";
+    gap: 30px;
+}
+
+.card:nth-child(1) { grid-area: short1; }
+.card:nth-child(2) { grid-area: long; }
+.card:nth-child(3) { grid-area: short2; }
+.card:nth-child(4) { grid-area: short3; }
+.card:nth-child(5) { grid-area: short4; }
+
+/* CARD */
+.card {
+    background: var(--glass);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    
+    /* Standard */
+    mask: 
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+
+    /* WebKit (Safari, older Chrome) */
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+
+    pointer-events: none;
+}
+
+.card-image {
+    height: 120px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,198,255,0.25);
+}
+
+/* BUTTON */
+.price-btn {
+    margin-top: auto;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+    transition: 0.3s ease;
+}
+
+.price-btn:hover {
+    box-shadow: 0 0 20px var(--secondary);
+    transform: scale(1.05);
+}
+
+/* SCROLL FIX FOR STICKY HEADER */
+.card,
+#pricing {
+    scroll-margin-top: 150px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 992px) {
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "short1 short2"
+            "short3 short4"
+            "long long";
+    }
+}
+
+@media(max-width: 600px) {
+    .services-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services-section {
+        padding: 80px 20px;
+    }
+}
+
+.pricing-section {
+    padding: 120px 5%;
+    background: linear-gradient(135deg, #0f172a, #111827);
+    color: white;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* CARD */
+.pricing-card {
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.4s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(0,198,255,0.25);
+}
+
+/* Featured (Media) */
+.featured {
+    grid-column: span 2;
+    transform: scale(1.05);
+}
+
+.featured:hover {
+    transform: scale(1.08) translateY(-10px);
+}
+
+/* Gradient Accent Bar */
+.pricing-top {
+    height: 6px;
+    background: linear-gradient(45deg, #0066ff, #00c6ff);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(45deg, #0066ff, #00c6ff);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* PRICE */
+.price {
+    font-size: 2rem;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #00c6ff;
+}
+
+/* BUTTON */
+.pricing-card button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(45deg, #0066ff, #00c6ff);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.pricing-card button:hover {
+    box-shadow: 0 0 20px #00c6ff;
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media(max-width: 992px){
+    .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .featured {
+        grid-column: span 2;
+    }
+}
+
+@media(max-width: 600px){
+    .pricing-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .featured {
+        transform: none;
+    }
+}
+
+/* ===== METRICS ===== */
+.metrics-section {
+    height: 20vh;
+    min-height: 150px;
+    background: linear-gradient(45deg,#0066ff,#00c6ff);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.metric span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* ===== FORMS ===== */
+.form-section {
+    padding: 100px 5%;
+    background: #0f172a;
+    color: white;
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, select, textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+form button {
+    padding: 12px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(45deg,#0066ff,#00c6ff);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    box-shadow: 0 0 15px #00c6ff;
+}
+
+/* ===== POPUP ===== */
+.popup {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #00c6ff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: white;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.4s;
+    z-index: 2000;
+}
+
+.popup.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    .metrics-section{
+        flex-direction: column;
+        height:auto;
+        padding:20px 0;
+        gap:15px;
+    }
+}

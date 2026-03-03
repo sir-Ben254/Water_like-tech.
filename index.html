@@ -17,6 +17,7 @@
         <meta name="google-site-verification" content="YOUR_CODE_HERE">
 
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="service.css">
     </head>
     <body>
         <!--header-->
@@ -35,12 +36,13 @@
                 </button>
             </div>
             <nav class="nav-menu"id="navMenu">
-                <a href="#home">HOME</a>
-                <a href="#about">ABOUT US</a>
-                <a href="#services">SERVICES</a>
-                <a href="#pricing">PRICING</a>
-                <a href="#contact">CONTACT US</a>
+                <a href="#home" data-target="home">HOME</a>
+                <a href="#about" data-target="about">ABOUT US</a>
+                <a href="#services" data-target="services">SERVICES</a>
+                <a href="#pricing" data-target="pricing">PRICING</a>
+                <a href="#contact" data-target="contact">CONTACT US</a>
             </nav>
+            
         </header>
         <!--hero-->
         <section id="home" class="hero">
@@ -119,10 +121,216 @@
                 </div>
             </div>
         </section>
-         <!--services-->
-         <section id="services" class="services"></section>
-         <!--pricing-->
-         <!--contact-->
+         <!-- SERVICES SECTION -->
+        <section id="services" class="services-section">
+            <h2 class="section-title">My Services</h2>
+
+            <div class="services-grid">
+
+             <!-- 1 -->
+             <div class="card short" data-target="pricing-web">
+                 <div class="card-image"></div>
+                 <h3>Sites & Apps Design & Development</h3>
+                 <p>Custom responsive websites and mobile applications built for performance and scalability.</p>
+                 <ul>
+                     <li>UI/UX Design</li>
+                     <li>Frontend & Backend</li>
+                     <li>API Integration</li>
+                 </ul>
+                 <button class="price-btn">Pricing</button>
+             </div>
+
+             <!-- 2 LONG -->
+             <div class="card long" data-target="pricing-media">
+                 <div class="card-image"></div>
+                 <h3>Media Setup & Management</h3>
+                 <p>Full-scale digital presence setup and management for brands and creators.</p>
+                 <ul>
+                     <li>Social Media Setup</li>
+                     <li>Content Strategy</li>
+                     <li>Analytics & Reporting</li>
+                     <li>Brand Positioning</li>
+                     <li>Monetization Systems</li>
+                 </ul>
+                <button class="price-btn">Pricing</button>
+             </div>
+
+             <!-- 3 -->
+             <div class="card short" data-target="pricing-seo">
+                 <div class="card-image"></div>
+                 <h3>SEO & Automation</h3>
+                 <p>Ranking systems and workflow automation for sustainable growth.</p>
+                 <ul>
+                     <li>Technical SEO</li>
+                     <li>AI Automation</li>
+                     <li>Lead Funnels</li>
+                 </ul>
+                 <button class="price-btn">Pricing</button>
+             </div>
+
+             <!-- 4 -->
+             <div class="card short" data-target="pricing-marketing">
+                 <div class="card-image"></div>
+                 <h3>Digital Marketing</h3>
+                 <p>Strategic digital campaigns to convert traffic into revenue.</p>
+                 <ul>
+                     <li>Paid Ads</li>
+                     <li>Email Marketing</li>
+                     <li>Conversion Optimization</li>
+                 </ul>
+                 <button class="price-btn">Pricing</button>
+             </div>
+
+             <!-- 5 -->
+             <div class="card short" data-target="pricing-design">
+                 <div class="card-image"></div>
+                 <h3>Posters, Brochures, Business Cards & Calendars</h3>
+                 <p>High-impact branding materials for physical and digital presence.</p>
+                 <ul>
+                     <li>Print Design</li>
+                     <li>Brand Identity</li>
+                     <li>Layout Systems</li>
+                 </ul>
+                 <button class="price-btn">Pricing</button>
+             </div>
+
+            </div>
+        </section>
+        <!--pricing-->
+        <section id="pricing" class="pricing-section">
+            <h2 class="section-title">Pricing</h2>
+
+            <div class="pricing-grid">
+
+             <!-- WEB -->
+             <div class="pricing-card" id="pricing-web">
+                 <div class="pricing-top"></div>
+                 <h3>Sites & Apps Development</h3>
+                 <div class="price">From $450</div>
+                 <ul>
+                     <li>Custom UI/UX</li>
+                     <li>Responsive Build</li>
+                     <li>Backend + Database</li>
+                     <li>Deployment</li>
+                 </ul>
+                 <button>Get Started</button>
+             </div>
+
+             <!-- MEDIA (LONG FEATURED) -->
+             <div class="pricing-card featured" id="pricing-media">
+                 <div class="badge">Most Popular</div>
+                 <div class="pricing-top"></div>
+                 <h3>Media Setup & Management</h3>
+                 <div class="price">$800 / month</div>
+                 <ul>
+                     <li>Full Social Setup</li>
+                     <li>Content Strategy</li>
+                     <li>Weekly Reporting</li>
+                     <li>Ad Campaign Management</li>
+                     <li>Brand Monetization System</li>
+                 </ul>
+                 <button>Start Growth</button>
+             </div>
+
+             <!-- SEO -->
+             <div class="pricing-card" id="pricing-seo">
+                 <div class="pricing-top"></div>
+                 <h3>SEO & Automation</h3>
+                 <div class="price">$600</div>
+                 <ul>
+                     <li>Technical Audit</li>
+                     <li>Keyword Strategy</li>
+                     <li>Automation Setup</li>
+                 </ul>
+                 <button>Optimize Now</button>
+             </div>
+
+             <!-- MARKETING -->
+             <div class="pricing-card" id="pricing-marketing">
+                 <div class="pricing-top"></div>
+                 <h3>Digital Marketing</h3>
+                 <div class="price">$500</div>
+                 <ul>
+                     <li>Paid Ads Setup</li>
+                     <li>Funnel Creation</li>
+                     <li>Email Automation</li>
+                 </ul>
+                 <button>Launch Campaign</button>
+             </div>
+
+             <!-- DESIGN -->
+             <div class="pricing-card" id="pricing-design">
+                 <div class="pricing-top"></div>
+                 <h3>Print & Branding Design</h3>
+                 <div class="price">From $150</div>
+                 <ul>
+                     <li>Posters</li>
+                     <li>Business Cards</li>
+                     <li>Brochures</li>
+                     <li>Calendars</li>
+                 </ul>
+                 <button>Order Design</button>
+             </div>
+
+            </div>
+        </section>
+
+        <!-- ================= METRICS SECTION ================= -->
+        <section id="metrics" class="metrics-section">
+            <div class="metric">
+                 <h4>New Clients</h4>
+                 <span class="counter" data-target="120">0</span>
+           </div>
+           <div class="metric">
+                 <h4>Old Clients</h4>
+                 <span class="counter" data-target="85">0</span>
+           </div>
+           <div class="metric">
+                 <h4>WebApps Built</h4>
+                 <span class="counter" data-target="60">0</span>
+           </div>
+           <div class="metric">
+                 <h4>Services Completed</h4>
+                 <span class="counter" data-target="200">0</span>
+           </div>
+        </section>
+
+
+        <!-- ================= ORDER FORM ================= -->
+        <section id="order" class="form-section">
+            <h2>Place an Order</h2>
+            <form id="orderForm">
+                <input type="text" id="o_name" placeholder="Full Name" required>
+                <input type="email" id="o_email" placeholder="Email" required>
+                <input type="tel" id="o_phone" placeholder="Phone Number" required>
+        
+                <select id="o_service" required>
+                    <option value="">Select Service</option>
+                    <option>Web/App Development</option>
+                    <option>Media Setup & Management</option>
+                    <option>SEO & Automation</option>
+                    <option>Digital Marketing</option>
+                    <option>Print & Branding</option>
+                </select>
+
+                <textarea id="o_details" placeholder="Describe your project..." required></textarea>
+
+                <button type="submit">Submit Order</button>
+            </form>
+        </section>
+
+
+        <!-- ================= CONTACT SECTION ================= -->
+        <section id="contact" class="form-section contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <input type="text" id="c_name" placeholder="Full Name" required>
+                <input type="email" id="c_email" placeholder="Email" required>
+                <textarea id="c_message" placeholder="Tell us what you need..." required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
          <!--footer-->
          <footer class="footer">
             <h1>Water_Like Tech.</h1>
@@ -134,21 +342,22 @@
                 <a href=""class="icon"target="_blank"><i class="icon ion-logo-linkedin"></i></a>
                 <a href=""class="icon"target="_blank"><i class="icon ion-logo-whatsapp"></i></a>
                 <a href="tel:+254"class="icon">&#9742</a>
+                <ion-icon name="home"></ion-icon>
             </div>
-            <div class="cards-container">
-                <div id="supportCard" class="card support-card" >
+            <div class="sticker-container">
+                <div id="supportCard" class="sticker support-sticker" >
                     <h3>support</h3>
                     <p><span class="hand">&#128073;</span><a href="#contact">Request a quote</a></p>
                     <p><span class="hand">&#128073;</span><a href=""target="_blank">Leave a Review</a></p>
                     <p><span class="hand">&#128073;</span><a href="#" onclick="shareRecommendation(); return false;">Recommend us</a></p>
                 </div>
-                <div class="card">
+                <div class="sticker">
                     <h3>info</h3>
                     <p>Privacy policy</p>
                     <p>Terms of service</p>
                     <p>FAQ</p>
                 </div>
-                <div class="card">
+                <div class="sticker">
                     <h3>our hub</h3>
                     <p class="icon">&#128205; Nairobi, Kenya</p>
                     <p class="icon">&#9742; +254</p>
@@ -178,5 +387,10 @@
 
          <script src="script.js" defer></script>
          <script src="botlogic.js"defer></script>
+         <script src="service.js"defer></script>
+         <script type="module">
+            import { defineCustomElements } from './loader/index.es2017.js';
+            defineCustomElements(window);
+         </script>
     </body>
 </html>
